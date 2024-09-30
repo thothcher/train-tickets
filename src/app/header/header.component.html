@@ -1,0 +1,153 @@
+<header>
+    <div class="logo">
+        <a routerLink="/">
+            <img src="assets/png.png" alt="">
+            <p>{{ 'HEADER.TITLE' | translate}}</p>
+        </a>
+    </div>
+    <div class="header-details" [ngClass]="toggleMenu ? 'menuShown': '' ">
+        <div class="header-details-child">
+            <label class="container">
+                <div class="lang-menu">
+                    <div class="selected-lang">
+                        <img src="../../assets/language.svg">
+                        <p>{{ getLanguageName() }}</p> <!-- Display selected language name dynamically -->
+                    </div>
+                    <div class="selected-lang-child">
+                        <ul>
+                            <li>
+                                <a (click)="switchLanguage('en')" class="en">ENG</a>
+                            </li>
+                            <li>
+                                <a (click)="switchLanguage('geo')" class="geo">Geo</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='eng' (click)="responsiveList()">
+                        <div class="check-sign">
+                            <div class="resoponsive-lan">
+                                <div class="responsive-language" *ngIf="list">
+                                    <div><button class="geo" (click)="switchLanguage('en')">ENG</button></div>
+                                    <div><button class="geo" (click)="switchLanguage('geo')">Geo</button></div>
+                                </div>
+                                <input checked="checked" type="checkbox">
+                                <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg"
+                                    class="chevron-right">
+                                    <path
+                                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+
+            <label class="container">
+
+                <div class="lang-menu">
+                    <div class="selected-lang">
+                        <img src="../../assets/generic-currency-4631882-3834092.webp">
+                        <!-- <p>{{ 'HEADER.CURRENCY'| translate}}</p> -->
+                        <p>{{ currency | translate}}</p> <!-- Display selected language name dynamically -->
+
+
+                    </div>
+                    <div class="selected-lang-child">
+                        <ul>
+                            <li >
+                                <label class="usd" for="usd">
+                                    <img src="../../assets/usd.png" alt="">
+                                    {{ 'USD' | translate}}
+                                
+                                </label>
+                                <input type="radio" value="USD" id="usd" [(ngModel)]="currency"
+                                    (change)="onCurrencyChange($event)">
+                            </li>
+                            <li >
+                                <!-- <a href="" (click)="switchCurrency($event)" class="gel">GEL</a> -->
+                                <label class="gel" for="gel">
+                                    <img src="../../assets/larisvg.png" alt="">
+                                    {{ 'GEL' | translate}}</label>
+                                <input type="radio" value="GEL" id="gel" [(ngModel)]="currency"
+                                    (change)="onCurrencyChange($event)">
+                            </li>
+                          
+                        </ul>
+                    </div>
+
+                </div>
+                <div class='cur' (click)="responsiveListCurrency()">
+                    <div class="check-sign">
+                        <div class="resoponsive-lan">
+                            <div class="responsive-language" *ngIf="listCurrensy">
+                                <div><a href="" class="geo">USD</a></div>
+                                <div><a href="" class="geo">GEL</a></div>
+                            </div>
+                            <input checked="checked" type="checkbox">
+                            <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg"
+                                class="chevron-right">
+                                <path
+                                    d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </label>
+            <label class="container">
+                <div class="sign" (click)="signIn()">
+                    <div>
+                        <img src="../../assets/person.svg">
+                        <p>{{ 'HEADER.SIGN' | translate}}</p>
+
+                    </div>
+
+                </div>
+
+
+            </label>
+        </div>
+
+    </div>
+    <div class="sign-container" *ngIf="isDisplay" (click)="preventClose($event)">
+        <div class="form-container">
+            <form class="form">
+                <span class="heading">{{ 'HEADER.SIGN' | translate}} </span>
+
+                <div class="form-group">
+                    <input class="form-input" required="" type="email" />
+                    <label>{{ 'HEADER.EMAIL' | translate}}</label>
+                    <!-- <label>Email</label> -->
+
+
+                </div>
+
+                <div class="form-group">
+                    <input class="form-input" required="" type="password" />
+                    <label>{{ 'HEADER.PASSWORD' | translate}}</label>
+                </div>
+
+                <button>{{ 'HEADER.SIGN' | translate}}</button>
+            </form>
+            <div class="registration">
+                <p>{{ 'HEADER.ACCOUNT' | translate}}</p>
+                <a href="">{{ 'HEADER.REGISTRATION' | translate}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="check" [ngClass]="toggleMenu ? 'menuShown': '' ">
+        <a routerLink="checkticket"><button class="shadow__btn">{{ 'HEADER.CHECKTICKET' | translate}}</button></a>
+    </div>
+    <label class="hamburger" (click)="toggle()">
+        <input type="checkbox" (click)="preventToggle($event)">
+        <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+
+            </path>
+            <path class="line" d="M7 16 27 16"></path>
+        </svg>
+    </label>
+</header>

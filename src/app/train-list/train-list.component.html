@@ -1,0 +1,59 @@
+<div *ngIf="trains && trains.length" class="train_container">
+    <h2>{{ 'TRAINLIST.SUITABLE' | translate}}</h2>
+    <table class="train_table">
+        <thead>
+            <tr>
+                <th>{{ 'TRAINLIST.TRAINNUMBER' | translate}}</th>
+                <th>{{ 'TRAINLIST.DEPARTURE' | translate}}</th>
+                <th>{{ 'TRAINLIST.ARRIVE' | translate}}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let train of trains">
+                <td>
+                    <p>#{{train.number}}</p>
+                    <p> {{train.name | translate}}</p>
+                </td>
+
+                <td>
+                    <p> {{train.departure }}
+                    </p>
+                    <p> {{train.from | translate}}
+                    </p>
+                </td>
+
+                <td class="arrive">
+                    <p> {{train.arrive}}
+                    </p>
+                    <p> {{train.to | translate}}
+                    </p>
+                </td>
+
+                <td>
+                    <button type="button" (click)="orderTicket(train, train.id)" class="btn-31">
+                        <span class="text-container">
+                            <span class="text">{{ 'TRAINLIST.ORDER' | translate}}</span>
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!trains || !trains.length" class="empty_container">
+    <p> {{ 'TRAINLIST.NOTRAIN' | translate}}</p>
+
+    <img src="../../assets/Train-rafiki.svg" alt="Train">
+    <a routerLink="/"><button class="button">
+            <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                <path clip-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    fill-rule="evenodd"></path>
+            </svg>
+            {{ 'TRAINLIST.BACK' | translate}}
+        </button>
+    </a>
+
+
+</div>

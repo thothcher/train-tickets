@@ -1,0 +1,219 @@
+<div class="home_photo">
+    <div class="title_details">
+      
+        <h1>  {{ 'MAIN.TITLE' | translate}}</h1>
+        <!-- <h1>Search Train Tickets</h1> -->
+        <h5> {{ 'MAIN.DESCRIPTION' | translate}}</h5>
+    </div>
+    <div class="search_container">
+        <form (ngSubmit)="onSubmit()" class="search-container-childs">
+            <!-- Input for source -->
+            <mat-form-field>
+                <mat-label>{{ 'MAIN.FROM' | translate}}</mat-label>
+                <mat-select [(ngModel)]="source" name="source" (selectionChange)="filterDestinationOptions()" (openedChange)="onSelectMenuOpen($event)">
+                    <!-- Loop through sources to create options -->
+                    <mat-option *ngFor="let source of sources" [value]="source.value">{{source.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Input for destination -->
+            <mat-form-field>
+                <mat-label>{{ 'MAIN.TO' | translate}}</mat-label>
+                <mat-select [(ngModel)]="destination" name="destination" (openedChange)="onSelectMenuOpen($event)">
+                    <!-- Loop through filtered sources to create options -->
+                    <mat-option *ngFor="let destination of filteredDestinations"
+                        [value]="destination.value">{{destination.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Input for date -->
+            <mat-form-field class="form_field">
+                <mat-label>{{ 'MAIN.DATE' | translate}}</mat-label>
+                <!-- Bind datepicker filter to prevent selection of past dates -->
+                <input matInput [matDatepicker]="picker" id="date" [(ngModel)]="date" name="date"
+                    [matDatepickerFilter]="dateFilter">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- Input for number of travelers -->
+            <mat-slider min="1" max="15" step="1" showTickMarks discrete [displayWith]="formatLabel" class="pass">
+                <mat-hint>{{ 'MAIN.PASSENGERS' | translate}}</mat-hint>
+                <input matSliderThumb id="travelers" [(ngModel)]="travelers" name="travelers">
+            </mat-slider>
+
+            <!-- Submit button -->
+            <div class="search_btn">
+                <button type="submit" class="search_icon">
+                    <img src="../../assets/white-search.svg">
+                </button>
+            </div>
+        </form>
+
+
+    </div>
+
+
+</div>
+<div class="advantages">
+    <h2>{{ 'MAIN.ADVANTAGES' | translate}}</h2>
+    <div class="advantages_container">
+        <div class="advantages_container_child">
+            <div class="advantages_padding">
+                <img src="../../assets/safe.jpg">
+                <div>
+                    <p class="advantages-title">{{ 'MAIN.SAFE' | translate}}</p>
+                    <p class="advantages-info">{{ 'MAIN.TRAVELING' | translate}}
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="advantages_container_child">
+            <div class="advantages_padding">
+                <img src="../../assets/quicktrain.jpg">
+                <div>
+                    <p class="advantages-title">{{ 'MAIN.QUICK' | translate}}</p>
+                    <p class="advantages-info">{{ 'MAIN.APART' | translate}}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="advantages_container_child">
+            <div class="advantages_padding">
+                <img src="../../assets/cheap.jpg">
+                <div>
+                    <p class="advantages-title">{{ 'MAIN.CHEAP' | translate}}</p>
+                    <p class="advantages-info">{{ 'MAIN.TRAIN' | translate}}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="advantages_container_child">
+            <div class="advantages_padding">
+                <img src="../../assets/comportable.jpg">
+                <div>
+                    <p class="advantages-title">{{ 'MAIN.COMPORTABLE' | translate}}</p>
+                    <p class="advantages-info">{{ 'MAIN.COMPARED' | translate}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="destination">
+    <h2>{{ 'MAIN.POPULAR' | translate}}</h2>
+    <div class="destination_container">
+        <a href="https://wander-lush.org/things-to-do-in-batumi-georgia/">
+            <div class="destination_container_child_1">
+                <div class="destination_bottom_wrapper">
+                    <p class="destination_from">{{ 'MAIN.TBILISI' | translate}}</p>
+                    <div class="destination-place">
+                        <img src="../../assets/arrow.png">
+                        <p class="destination_to">{{ 'MAIN.BATUMI' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+
+        <a href="https://wander-lush.org/unique-things-to-do-in-tbilisi-georgia/">
+            <div class="destination_container_child_2">
+                <div class="destination_bottom_wrapper">
+                    <p class="destination_from">{{ 'MAIN.BATUMI' | translate}}</p>
+                    <div class="destination-place">
+                        <img src="../../assets/arrow.png">
+                        <p class="destination_to">{{ 'MAIN.TBILISI' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://wander-lush.org/zugdidi-georgia-guide/">
+            <div class="destination_container_child_3">
+                <div class="destination_bottom_wrapper">
+                    <p class="destination_from">{{ 'MAIN.TBILISI' | translate}}</p>
+                    <div class="destination-place">
+                        <img src="../../assets/arrow.png">
+                        <p class="destination_to">{{ 'MAIN.ZUGDIDI' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://wander-lush.org/things-to-do-in-poti-georgia/">
+            <div class="destination_container_child_4">
+                <div class="destination_bottom_wrapper">
+                    <p class="destination_from">{{ 'MAIN.TBILISI' | translate}}</p>
+                    <div class="destination-place">
+                        <img src="../../assets/arrow.png">
+                        <p class="destination_to">{{ 'MAIN.POTI' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+<div class="questions">
+    <h2>{{ 'MAIN.FREQUENTLY' | translate}}</h2>
+    <div class="question_details">
+        <details>
+            <summary>{{ 'MAIN.HOWTOBUY' | translate}}</summary>
+            <p class="summary_p">{{ 'MAIN.HOWTOBUYANSWER' | translate}}</p>
+        </details>
+
+        <details>
+            <summary>{{ 'MAIN.TICKETID' | translate}}</summary>
+            <p class="summary_p">{{ 'MAIN.TICKETIDANSWER' | translate}}</p>
+        </details>
+
+        <details>
+            <summary>{{ 'MAIN.GETTHETRAIN' | translate}}</summary>
+            <p class="summary_p">{{ 'MAIN.GETTHETRAINANSWER' | translate}}</p>
+        </details>
+        <details>
+            <summary>{{ 'MAIN.PURCHASEDTICKET' | translate}}</summary>
+            <p>{{ 'MAIN.PURCHASEDTICKETANSWER' | translate}}</p>
+        </details>
+        <details>
+            <summary>{{ 'MAIN.CHANGEDATE' | translate}}
+            </summary>
+            <p class="summary_p">{{ 'MAIN.CHANGEDATEANSWER' | translate}}</p>
+        </details>
+    </div>
+
+</div>
+<div class="customer_container">
+    <h2>{{ 'MAIN.CUSTOMSERVICE' | translate}}</h2>
+    <div class="customer_service">
+
+        <a href="tel:032 2 55 55 55">
+            <div class="customer_service_child">
+                <img src="../../assets/phone.svg">
+                <p>032 2 55 55 55</p>
+            </div>
+        </a>
+        <a href="mailto:tickect@tr.ge">
+            <div class="customer_service_child">
+                <img src="../../assets/email.svg">
+                <p>tickect&#64;tr.ge</p>
+            </div>
+        </a>
+        <a href="https://www.messenger.com/">
+
+            <div class="customer_service_child">
+                <img src="../../assets/messenger.svg">
+                <p>m.me/ticket.tr.ge</p>
+
+            </div>
+        </a>
+        <a href="https://www.facebook.com/">
+            <div class="customer_service_child">
+                <img src="../../assets/fb.svg">
+                <p>fb.com/tr.tickect</p>
+            </div>
+        </a>
+    </div>
+</div>

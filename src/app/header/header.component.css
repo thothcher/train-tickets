@@ -1,0 +1,592 @@
+header {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 25px;
+}
+
+/* ლოგო */
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.logo p {
+  font-family: poetsen;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ბილეთების შემოწმების ღილაკი  */
+.shadow__btn {
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  color: black;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  font-family: poetsen;
+  transition: 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: #0077B6;
+}
+
+.shadow__btn:hover {
+  color: #006BA6;
+  background: rgb(26, 26, 26);
+}
+
+/* ჰედერის მარცხენა ნაწილი */
+.header-details-child {
+  display: flex;
+  gap: 20px;
+}
+
+.header-details-child p{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.header-details img {
+  width: 25px;
+  height: 25px;
+}
+
+.header-details p {
+  font-family: poetsen;
+  margin: 0;
+}
+
+
+.container {
+  --color: black;
+  --size: 20px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+  /* gap: 20px; */
+
+}
+
+.container>div {
+  display: flex;
+  align-items: center;
+}
+
+.lang-menu {
+  width: 100px;
+  text-align: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* .usd_text{
+  font-size: 15px
+} */
+
+/* ენების ჩამონათვალი ჰედერში */
+.lang-menu .selected-lang {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  cursor: pointer;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-family: poetsen;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.selected-lang:hover {
+  transform: scale(1.2);
+  color: black;
+  border-radius: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.lang-menu .selected-lang:before {
+  /* content: ''; */
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+}
+
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #f8f8f8;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  width: 125px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.lang-menu:hover ul {
+  display: block;
+  margin-right: -23px;
+  border-radius: 20px;
+  overflow: hidden;
+
+
+}
+
+.lang-menu ul li {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-evenly;
+  ;
+  align-items: center;
+
+}
+
+.lang-menu ul li:hover {
+  background-color: #f2f2f2;
+}
+
+.lang-menu ul li a {
+  text-decoration: none;
+  width: 125px;
+  padding: 10px 10px;
+  display: block;
+  align-self: center;
+  font-size: 14px;
+  align-items: center;
+}
+
+.lang-menu ul li a:before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.en:before {
+  background-image: url(../../assets/flag-eng.png);
+
+}
+
+.geo:before {
+  background-image: url(../../assets/geo\ flag.png);
+}
+
+
+/* ვალუტის ჩამატება */
+.usd:before {
+  background-image: url(../../assets/usd.png);
+}
+
+.gel:before {
+  background-image: url(../../assets/larisvg.png);
+
+}
+
+.selected-lang-child label {
+  text-decoration: none;
+    width: 125px;
+    padding: 10px 10px;
+    display: block;
+    align-self: center;
+    font-size: 14px;
+    color:var(--bs-link-color-rgb);
+    display: flex;
+    gap:12px;
+    cursor: pointer;
+}
+
+
+/* რეგისტრაციის ფორმა */
+.sign-container {
+  background-color: black;
+  padding: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+}
+
+.sign div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  width: 100px;
+  transition: 0.3s;
+}
+
+
+.sign div:hover {
+  transform: scale(1.2);
+}
+
+
+.form-container {
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(120deg, transparent 25%, #1cb0ff, #40ff99) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-input {
+  color: white;
+  background: transparent;
+  border: 1px solid #414141;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+}
+
+button {
+  border-radius: 5px;
+  padding: 6px;
+  background: #ffffff14;
+  color: #c7c5c5;
+  border: 1px solid #414141;
+}
+
+button:hover {
+  background: #212121;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #414141;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label {
+  top: -16px;
+  left: 0;
+  background: #212121 padding-box;
+  padding: 10px 0 0 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+/* რესპონსივის ელემენტები */
+/* ბურგერ მენიუ  */
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: #006BA6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+
+/* რესპონსივის ენები/ვალუტა */
+
+.responsive-language {
+  display: flex;
+  margin-left: 60px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.responsive-language div {
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.responsive-language>div:first-child {
+  border-right: 1px solid grey;
+}
+
+.responsive-language div:hover {
+  background-color: rgb(202, 200, 200);
+
+}
+
+.responsive-language div a:hover {
+  color: #0077B6;
+
+}
+
+.responsive-language a {
+  text-decoration: none;
+  font-family: poetsen;
+  color: #0077B6;
+}
+
+
+/* რესპონსივის ისრები */
+.container .chevron-right {
+  position: absolute;
+  animation: keyframes-return .5s backwards;
+  bottom: 0;
+  left: 125px;
+  top: 11px;
+}
+
+.container input:checked~.chevron-right {
+  animation: keyframes-rotate .5s backwards;
+  transform: rotate(180deg);
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+/* ------ Animation ------ */
+@keyframes keyframes-rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes keyframes-return {
+  0% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* რესპონსივის ენების/ვალუტის ჩამონათვალის გათიშვა  */
+.check-sign {
+  display: none !important;
+  display: flex;
+
+}
+
+/* კლასზე ნავიგაციის შემოსვლა */
+.menuShown {
+  left: 40vw !important;
+}
+
+
+
+@media screen and (max-width:1100px) {
+  .logo {
+    transform: scale(0.8);
+  }
+
+  .check {
+    transform: scale(0.8);
+  }
+
+}
+
+@media screen and (max-width:986px) {
+  /* მენიუს შეცვლა */
+  .selected-lang-child {
+    display: none !important;
+  }
+  .check-sign {
+    display: block !important;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 999999999;
+  }
+
+
+  /* ჰედერი */
+  .header-details {
+    position: absolute;
+    left: 120vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(217, 240, 250);
+    z-index: 9;
+    transition: left 0.7s ease;
+    border-radius: 10px;
+    z-index: 99999999;
+  }
+
+  .header-details-child {
+    flex-direction: column;
+    margin-top: 150px;
+
+  }
+
+  .container {
+    /* margin-top:100px; */
+    justify-content: center;
+    align-items: center;
+    align-items: start;
+    align-content: start;
+    justify-items: start;
+    justify-content: start;
+    margin-left: 20px;
+  }
+
+  .selected-lang {
+    max-width: 100px;
+    margin: 0 !important;
+
+  }
+
+  .selected-lang:hover {
+    transform: scale(0.9) !important;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .sign div:hover {
+    transform: scale(0.9);
+    box-shadow: none;
+    padding: 0 !important;
+  }
+
+
+  /* ბილეთების შემოწმების ღილაკი */
+  .check {
+    position: absolute;
+    left: 120vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 999999999;
+    margin-top: 300px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    transition: left 0.7s ease;
+    cursor: pointer;
+  }
+
+  .check button {
+    padding: 20px;
+  }
+
+  /* რეგისტრაცია */
+  .sign-container {
+    z-index: 2000;
+
+  }
+}
+
+@media screen and (max-width:600px) {
+  .header-details-child {
+    transform: scale(0.8);
+
+  }
+
+  .container {
+    margin-left: -50px !important;
+  }
+}

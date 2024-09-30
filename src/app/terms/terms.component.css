@@ -1,0 +1,13 @@
+.terms{
+    max-width: 1250px;
+    margin: auto;
+}
+
+h2{
+    font-family: poetsen;
+}
+
+.terms p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}

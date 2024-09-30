@@ -1,0 +1,592 @@
+.check {
+    background-color: rgb(219, 238, 245);
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-family: poetsen;
+    margin-top: 100px;
+
+}
+
+.id_input {
+    border: 1px solid black;
+}
+
+.form_container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inccorect p {
+    font-family: poetsen;
+    font-size: 30px;
+    color: red;
+}
+
+input {
+    border-radius: 10px;
+    padding: 1rem 2.5rem;
+    width: 500px;
+}
+
+.btn {
+    font-size: 1.2rem;
+    font-family: poetsen;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+}
+
+.btn:active {
+    scale: 0.92;
+}
+
+.btn:hover {
+    background: rgb(2, 29, 78);
+    background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+}
+
+
+/* შემოწმების ფურცელი */
+
+.ticket_container {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+    margin-top: 100px;
+    background-color: rgb(154, 183, 194);
+    border-radius: 10px;
+    margin-bottom: 100px;
+
+
+}
+
+.done {
+    width: 70px;
+    height: 70px;
+    margin-top: 50px;
+}
+
+h5 {
+    font-family: poetsen;
+    font-size: 30px;
+}
+
+.ticket-check {
+    display: grid;
+    grid-template-columns: 5fr 0.3fr;
+    /* justify-content: center; */
+    gap: 40px;
+    width: 100%;
+    /* margin-top: 40px; */
+    padding: 60px;
+    border-radius: 10px;
+
+
+}
+
+.ticket_details {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 10px;
+
+
+
+}
+
+.ticket_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket_logo img {
+    width: 90px;
+    height: 70px;
+}
+
+.ticket_logo p {
+    font-family: poetsen;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.ticket_number {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.ticket_number p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.ticket_info {
+    font-weight: 800;
+}
+
+.ticket_direction {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.ticket_departure {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket_departure p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+
+}
+
+.ticket_arrival {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket_arrival p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.ticket_departuredate {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket_departuredate p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.contact_information {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.contact_info {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    /* font-weight: 600; */
+}
+
+.contact_information p {
+    font-family: "Times New Roman", Times, serif;
+    /* font-size: 25px; */
+}
+
+.contact {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+}
+
+.email {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.email p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.phone {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.passenger {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+}
+
+.name {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.name p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+
+}
+
+.surname {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.surname p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.id {
+    border-right: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.seat p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+}
+
+.total {
+    margin-top: 30px;
+    border-top: 1px solid black;
+    max-width: 300px;
+    align-self: flex-end;
+    width: 100%;
+}
+
+.total p {
+    font-family: poetsen;
+    font-size: 20px;
+    margin-top: 20px;
+    align-self: flex-end;
+}
+
+.ticket_price {
+    margin-left: 200px;
+}
+
+.ticket_information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ticket_information p {
+    color: red;
+    font-size: 30px;
+    font-family: poetsen;
+}
+
+.print {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.print img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px;
+
+}
+
+.print img:hover {
+    background-color: rgb(219, 238, 245);
+    border: 1px solid black;
+
+}
+.cencel{
+    margin-bottom: 50px;
+}
+.btn_second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    overflow: hidden;
+    height: 3rem;
+    background-size: 300% 300%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+#container-stars {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+}
+
+strong {
+    z-index: 2;
+    font-family: 'Avalors Personal Use';
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 4px white;
+}
+
+#glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+}
+
+.circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+}
+
+.btn_second:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+}
+
+.btn_second:hover {
+    transform: scale(1.1)
+}
+
+.btn_second:active {
+    border: double 4px #FE53BB;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+}
+
+.btn_second:active .circle {
+    background: #FE53BB;
+}
+
+#stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+}
+
+#stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-135rem);
+    }
+}
+
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+@media screen and (max-width:1250px) {
+
+    .form_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:900px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        width: 300px;
+    }
+    .ticket_container{
+        transform: scale(0.7);
+        margin-top:-50px;
+    };
+    .ticket-check{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .inccorect p{
+        font-size: 15px;
+    }
+    .ticket_information p{
+        font-size: 15px;
+    }
+    .cencel{
+        margin-top:-100px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .ticket_container{
+        transform: scale(0.7);
+        margin-left:-70px;
+    };
+}

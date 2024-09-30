@@ -1,0 +1,118 @@
+<div class="check">
+    <!-- <h2>please enter ticket number</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form_container">
+            <div>
+                <label for="id"></label>
+                <input class="id_input" type="text" id="id" [(ngModel)]="ticketId" name="id" required />
+            </div>
+            <button type="submit" class="btn" (click)="change()">Search Ticket</button>
+
+        </div>
+
+        <div class="inccorect" *ngIf="!isIdCorrect">
+            <p>Ticket Number is not correct, please try again</p>
+        </div>
+
+    </form> -->
+    <div class="ticket_container" *ngIf="isDisplay && ticket">
+        <img class='done' src="../../assets/done.png">
+        <h5>{{ 'FINALTICKET.PAYMENT' | translate}}</h5>
+        <div class="ticket-check">
+            <div class="ticket_details">
+                <div class="ticket_logo">
+                    <p>{{ 'FINALTICKET.RAILWAY' | translate}}</p>
+                    <img src="../../assets/png-removebg-preview.png">
+                </div>
+                <div class="ticket_number">
+                    <p>{{ 'FINALTICKET.NUMBER' | translate}}<span class="ticket_info">{{ticket.id}}</span></p>
+                    <p>{{ 'FINALTICKET.PURCHASE' | translate}}<span class="ticket_info">{{currentDate}} </span></p>
+                </div>
+                <div class="ticket_direction">
+                    <div class="ticket_departure">
+                        <p>{{ 'FINALTICKET.DEPARTURE' | translate}}<span class="ticket_info">{{ticket.train.from}} {{ticket.train.departure}}</span>
+                        </p>
+                    </div>
+                    <div class="ticket_arrival">
+                        <p>{{ 'FINALTICKET.ARRIVE' | translate}} <span class="ticket_info">{{ticket.train.to}} {{ticket.train.arrive}}</span></p>
+                    </div>
+                    <div class="ticket_departuredate">
+                        <p>{{ 'FINALTICKET.DATE' | translate}}<span class="ticket_info">{{ticket.date}} </span></p>
+
+                    </div>
+                </div>
+                <div class="contact_information">
+                    <p class="contact_info">{{ 'FINALTICKET.CONTACT' | translate}}</p>
+                    <div class="contact">
+                        <div class="email">
+                            <p>{{ 'FINALTICKET.EMAIL' | translate}} <span class="ticket_info">{{ticket.email}} </span></p>
+
+                        </div>
+                        <div class="phone">
+                            <p>{{ 'FINALTICKET.PHONE' | translate}}<span class="ticket_info">{{ticket.phone}} </span></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_information">
+                    <p class="contact_info">{{ 'FINALTICKET.PASSENGERS' | translate}}</p>
+
+                    <div class="passenger">
+                        <ng-container *ngFor="let person of ticket.persons; ">
+                            <div class="name">
+                                <p>{{ 'FINALTICKET.NAME' | translate}} <span class="ticket_info">{{ person.name }} </span></p>
+                            </div>
+                            <div class="surname">
+                                <p>{{ 'FINALTICKET.SURNAME' | translate}} <span class="ticket_info">{{ person.surname }} </span></p>
+                            </div>
+                            <div class="id">
+                                <p>{{ 'FINALTICKET.ID' | translate}} <span class="ticket_info">{{ person.idNumber }} </span></p>
+                            </div>
+                            <div class="seat">
+                                <p>{{ 'FINALTICKET.SEAT' | translate}} <span class="ticket_info">{{ person.seat.number }} </span></p>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </div>
+                <div class="total">
+                    <p>{{ 'FINALTICKET.TOTAL' | translate}}<span class="ticket_price">{{ticket.ticketPrice}} </span></p>
+
+                </div>
+                <div class="ticket_information">
+                    <p>{{ 'FINALTICKET.DOWNLOAD' | translate}}</p>
+                </div>
+            </div>
+            <div class="print">
+                <img src="../../assets/print-icon-2048x1945-b9cz5kf5.png" (click)="printTicket()">
+                <img src="../../assets/download-cloud-flat.png" (click)="downloadPDF()">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="image_popup" *ngIf="isTicketDeleted">
+        <img src="../../assets/remove_ticket-512.webp" alt="Ticket Deleted">
+        <p>{{ 'FINALTICKET.DELETE' | translate}}</p>
+    </div>
+
+
+    <div class="cencel" *ngIf="isDisplay && ticket">
+        <a routerLink="/">
+            <button class="btn_second" type="button" (click)="cancelTicket()">
+                <strong>{{ 'FINALTICKET.CANCEL' | translate}}</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+    
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+
+        </a>
+        
+
+    </div>
+</div>

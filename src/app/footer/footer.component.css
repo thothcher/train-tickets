@@ -1,0 +1,145 @@
+:root {
+    --textFont: "Roboto", sans-serif;
+    --white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0 ;
+  
+}
+
+footer {
+    background-color: rgb(14, 37, 63);
+    padding: 60px 40px;
+}
+
+.footer_container {
+    display: grid;
+    max-width: 1250px;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 45px;
+    margin-top: 50px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.title {
+    color: white;
+    font-family: poetsen;
+    font-size: 20px;
+
+}
+
+.photo {
+    width: 100px;
+    height: 80px;
+}
+
+.terms {
+    display: flex;
+    flex-direction: column;
+    gap: 22px
+}
+
+.terms a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--textFont);
+    font-size: 12px;
+}
+
+.terms_p {
+    color: white;
+    font-family: var(--textFont);
+    font-size: 12px;
+}
+
+.from {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+h4 {
+    color: white;
+    font-family: poetsen;
+}
+
+.from_desinations {
+    color: white;
+    font-family: var(--textFont);
+    font-size: 18px;
+}
+
+.to {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.to_desinations {
+    color: white;
+    font-family: var(--textFont);
+    font-size: 18px;
+}
+
+.follow {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.follow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.follow a {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.follow img {
+    width: 20px;
+}
+
+.follow-container p {
+    color: white;
+    font-size: 18px;
+    font-family: var(--textFont);
+}
+
+@media screen and (max-width:1250px) {
+
+    .footer_container {
+        grid-template-columns: 1fr;
+        /* column-gap:20px; */
+        row-gap: 30px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+
+    }
+
+    .terms {
+        align-items: center;
+    }
+
+}

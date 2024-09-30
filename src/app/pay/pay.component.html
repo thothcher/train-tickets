@@ -1,0 +1,42 @@
+<div class="pay">
+    <h2>{{ 'PAY.CARD' | translate}}</h2>
+    <form (ngsubmit)="onSubmit()">
+        <div class="pay_container">
+            <!-- <div class="total_amount">
+                <p>Total amount:</p>
+            </div> -->
+            <div class="card">
+                <p>{{ 'PAY.NUMBER' | translate}}</p>
+                <input type="text" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="validity_cvc">
+                <div class="card">
+                    <p>{{ 'PAY.VALIDITY' | translate}}</p>
+                    <input type="date" class="date" required>
+                </div>
+                <div class="card">
+                    <p>{{ 'PAY.CVC' | translate}}</p>
+                    <input type="text" placeholder="000" required>
+                </div>
+            </div>
+            <div class="card">
+                <p>{{ 'PAY.PWNER' | translate}}</p>
+                <input type="text" placeholder="{{ 'PAY.NAME' | translate}}" required>
+            </div>
+            <a routerLink="/finalticket">
+                <button type="submit" class="btn" (click)="onSubmit()" >
+                    <strong>{{ 'PAY.SUBMIT' | translate}}</strong>
+                    <div id="container-stars">
+                        <div id="stars"></div>
+                    </div>
+
+                    <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </button>
+            </a>
+        </div>
+
+    </form>
+</div>
